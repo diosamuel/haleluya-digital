@@ -1,0 +1,66 @@
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  padding-top: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer {
+  width: 100%;
+  height: 50px;
+  margin-top: calc(0.5rem + 50px);
+  border-top: 0.5px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer a {
+  text-decoration: underline;
+  color: navy;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.select {
+  width: 100%;
+  max-width: 480px;
+  position: absolute !important;
+  bottom: 4rem;
+}
+
+.pageContent {
+  flex: 1;
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 7rem;
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 480px) {
+  .select {
+    padding: 0 1rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
+}
