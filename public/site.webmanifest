@@ -1,5 +1,5 @@
 {
-  "name": "Haleluya Digital",
+  "name": "Doding Haleluya Digital",
   "short_name": "Haleluya Digital",
   "icons": [
     {
@@ -15,5 +15,6 @@
   ],
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
-  "display": "standalone"
+  "display": "standalone",
+  "orientation": "portrait"
 }

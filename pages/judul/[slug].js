@@ -20,7 +20,7 @@ export async function getStaticProps(context) {
 
 const Judul = ({ song }) => {
   return (
-    <Page title={song.title}>
+    <Page title={song.title} lyrics={song.lyrics}>
       <h3>{song.title}</h3>
       <p className={styles.lyrics}>{song.lyrics}</p>
     </Page>
