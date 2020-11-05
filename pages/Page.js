@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -25,10 +25,10 @@ function formatOptionLabel({ label }, { inputValue }) {
 }
 
 export default function Page({ title = "", lyrics = "", children = null }) {
-  const windowLoaded = useRef(false);
+  const [windowLoaded, setWindowLoaded] = useState(false);
   const router = useRouter();
   useEffect(() => {
-    windowLoaded.current = true;
+    setWindowLoaded(true);
   }, []);
   function handleSelectChange(value) {
     router.push(`/judul/${slugTitle(value.label)}`);
@@ -67,7 +67,7 @@ export default function Page({ title = "", lyrics = "", children = null }) {
       </main>
       <div className={styles.pageContent}>
         {children}
-        {windowLoaded.current && window.navigator.share && (
+        {windowLoaded && window.navigator.share && (
           <button className={styles.shareButton} onClick={handleShareClick}>
             Bagikon
           </button>
