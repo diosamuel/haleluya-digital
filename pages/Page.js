@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Select, { createFilter } from "react-select";
 import { ArrowLeft, ArrowRight } from 'react-feather'
+import { useSwipeable } from 'react-swipeable'
 // import Highlighter from "react-highlight-words";
 import ShareButton from "./components/ShareButton";
 import styles from "../styles/Page.module.css";
@@ -27,6 +28,11 @@ const options = songs.map((song) => ({
 
 export default function Page({ title = "", lyrics = "", prevSlug, nextSlug, children = null }) {
   const router = useRouter();
+  const handlers = useSwipeable({
+    onSwipedLeft: () => nextSlug && router.push(`/judul/${nextSlug}`),
+    onSwipedRight: () => prevSlug && router.push(`/judul/${prevSlug}`),
+  });
+
   function handleSelectChange(value) {
     router.push(`/judul/${slugTitle(value.label)}`);
   }
@@ -59,7 +65,7 @@ export default function Page({ title = "", lyrics = "", prevSlug, nextSlug, chil
           <Link href="/">Doding Haleluya Digital</Link>
         </h1>
       </main>
-      <div className={styles.pageContent}>
+      <div {...handlers} className={styles.pageContent}>
         {children}
         <ShareButton title={title} lyrics={lyrics} />
       </div>
