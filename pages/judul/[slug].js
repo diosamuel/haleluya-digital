@@ -11,16 +11,28 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const { slug } = context.params;
   let song = songs.find((song) => slugTitle(song.title) === slug);
+  let songIndex = songs.findIndex((song) => slugTitle(song.title) === slug);
+  let prevSlug = "";
+  let nextSlug = "";
+  console.log(prevSlug)
+  if (songIndex > 0) {
+    prevSlug = slugTitle(songs[songIndex - 1].title)
+  }
+  if (songIndex <= 504) {
+    nextSlug = slugTitle(songs[songIndex + 1].title)
+  }
   return {
     props: {
+      prevSlug,
+      nextSlug,
       song,
     },
   };
 }
 
-const Judul = ({ song }) => {
+const Judul = ({ song, prevSlug, nextSlug }) => {
   return (
-    <Page title={song.title} lyrics={song.lyrics}>
+    <Page prevSlug={prevSlug} nextSlug={nextSlug} title={song.title} lyrics={song.lyrics}>
       <h3>{song.title}</h3>
       <p className={styles.lyrics}>{song.lyrics}</p>
     </Page>

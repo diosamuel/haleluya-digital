@@ -24,7 +24,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: var(--body-bg);
   position: fixed;
   bottom: 0;
   user-select: none;
@@ -42,19 +42,63 @@
   text-align: center;
 }
 
-.select {
+.searchContainer { 
+  bottom: 4rem;
+  position: sticky;
   width: 100%;
   max-width: 480px;
-  position: sticky !important;
-  bottom: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.searchContainer .arrowBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0px solid gainsboro;
+  border-radius: 6px;
+  color: #f6f5f5;
+  padding: 0.5rem;
+  background: rgb(0, 71, 171);
+  cursor: pointer;
+  /* box-shadow: 0 1px 1px rgba(10,35,81,0.11), 
+              0 2px 2px rgba(10,35,81,0.11), 
+              0 4px 4px rgba(10,35,81,0.11), 
+              0 6px 8px rgba(10,35,81,0.11),
+              0 8px 16px rgba(10,35,81,0.11); */
+  
+/* background: radial-gradient(circle, rgba(10,35,81,1) 0%, rgba(0,48,143,1) 100%); */
+}
+
+.searchContainer .arrowBox:hover {
+  background: rgba(0, 71, 171, 0.9
+  );;
+}
+
+.searchContainer .arrowBox:first-child {
+  margin-right: 0.5rem;
+}
+
+.searchContainer .arrowBox:last-child {
+  margin-left: 0.5rem;
+}
+
+.arrowBox svg {
+  stroke-width: 2px;
+  /* stroke: red; */
+}
+
+.select {
+  width: 100%;
   font-size: 1.5rem;
+  flex: 1;
 }
 
 .pageContent {
   flex: 1;
   width: 100%;
   max-width: 480px;
-  margin-bottom: 7rem;
+  margin-bottom: 5rem;
   font-size: 1.5rem;
 }
 
@@ -65,7 +109,7 @@
 
 @media only screen and (max-width: 480px) {
   .select {
-    width: 95%;
+    width: 80%;
   }
   .title {
     font-size: 2rem;
