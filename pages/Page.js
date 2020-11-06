@@ -51,6 +51,7 @@ export default function Page({ title = "", lyrics = "", prevSlug, nextSlug, chil
     <div className={styles.container}>
       <Head>
         <title>{title ? title + " | " : ""} Doding Haleluya Digital</title>
+        <link rel="canonical" href={`https://haleluya.digital` + (title ? `/judul/${slugTitle(title)}` : '')}></link>
       </Head>
 
       <main className={styles.main}>

@@ -14,7 +14,6 @@ export async function getStaticProps(context) {
   let songIndex = songs.findIndex((song) => slugTitle(song.title) === slug);
   let prevSlug = "";
   let nextSlug = "";
-  console.log(prevSlug)
   if (songIndex > 0) {
     prevSlug = slugTitle(songs[songIndex - 1].title)
   }
