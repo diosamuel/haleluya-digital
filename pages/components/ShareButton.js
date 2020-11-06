@@ -24,7 +24,7 @@ export default function ShareButton({ title = "", lyrics = "" }) {
         style={{ fontSize: "1.5rem", marginBottom: "1rem" }}
         onClick={handleShareClick}
       >
-        Bagikon
+        Bagihon
       </button>
     );
   } else {
