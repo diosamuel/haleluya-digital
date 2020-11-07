@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const { number } = context.params;
   let song = songs.find((song) => song.number === Number(number));
-  let songIndex = songs.findIndex((song) => slugTitle(song.title) === slug);
+  let songIndex = songs.findIndex((song) => song.number === Number(number));
   let prevSlug = "";
   let nextSlug = "";
   if (songIndex > 0) {
