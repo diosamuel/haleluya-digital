@@ -17,7 +17,7 @@
 
 .footer {
   width: 100%;
-  height: 50px;
+  height: 30px;
   margin-top: calc(0.5rem + 50px);
   border-top: 0.5px solid #eaeaea;
   display: flex;
@@ -42,13 +42,18 @@
   text-align: center;
 }
 
-.searchContainer { 
-  bottom: 4rem;
+.title a {
+  text-decoration: none;
+}
+
+.searchContainer {
+  bottom: 2.5rem;
   position: sticky;
   width: 100%;
   max-width: 480px;
   display: flex;
   align-items: center;
+  z-index: 2;
 }
 
 .searchContainer .arrowBox {
@@ -61,18 +66,18 @@
   padding: 0.5rem;
   background: rgb(0, 71, 171);
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   /* box-shadow: 0 1px 1px rgba(10,35,81,0.11), 
               0 2px 2px rgba(10,35,81,0.11), 
               0 4px 4px rgba(10,35,81,0.11), 
               0 6px 8px rgba(10,35,81,0.11),
               0 8px 16px rgba(10,35,81,0.11); */
-  
-/* background: radial-gradient(circle, rgba(10,35,81,1) 0%, rgba(0,48,143,1) 100%); */
+
+  /* background: radial-gradient(circle, rgba(10,35,81,1) 0%, rgba(0,48,143,1) 100%); */
 }
 
 .searchContainer .arrowBox:hover {
-  background: rgba(0, 71, 171, 0.9
-  );;
+  background: rgba(0, 71, 171, 0.9);
 }
 
 .searchContainer .arrowBox:first-child {
@@ -100,11 +105,86 @@
   max-width: 480px;
   margin-bottom: 5rem;
   font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .contentPlaceholder {
   color: #d0d0d0;
   user-select: none;
+}
+
+.infoButton {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+  color: slategray;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.showInfoModal {
+  position: fixed;
+  top: 200%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 90vh;
+  pointer-events: none;
+  border-radius: 4px;
+  background: #fbfbfb;
+  transition: opacity 0.24s, top 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  opacity: 0;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.showInfoModal.shown {
+  pointer-events: all;
+  opacity: 1;
+  top: 50%;
+  transition: opacity 0.24s, top 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: 2;
+}
+
+.logoContainer {
+  width: 128px;
+  height: 128px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 50%;
+}
+
+.logoImage {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.showInfoModal h2 {
+  margin-bottom: 0;
+}
+
+.descriptionParagraph {
+  text-align: justify;
+  overflow: auto;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.donationButton {
+  margin-bottom: 1rem !important;
+}
+
+.contentAction {
+  display: flex;
+  justify-content: space-around;
 }
 
 @media only screen and (max-width: 480px) {
@@ -113,5 +193,8 @@
   }
   .title {
     font-size: 2rem;
+  }
+  .descriptionParagraph {
+    max-height: 300px;
   }
 }

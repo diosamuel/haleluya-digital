@@ -8,10 +8,25 @@ const slugOptions = {
 const songs = require("./songs.json");
 
 const additionalEntries = [
-  ...songs.map(song => ({ url: `/nomor/${song.number}.html`, revision: null })),
-  ...songs.map(song => ({ url: `/judul/${slugify(song.title.split(". ")[1], slugOptions)}.html`, revision: null})),
-  ...songs.map(song => ({ url: `_next/data/${buildId}/nomor/${song.number}.json`, revision: null})),
-  ...songs.map(song => ({ url: `_next/data/${buildId}/judul/${slugify(song.title.split(". ")[1], slugOptions)}.json`, revision: null})),
+  ...songs.map((song) => ({
+    url: `/nomor/${song.number}.html`,
+    revision: null,
+  })),
+  ...songs.map((song) => ({
+    url: `/judul/${slugify(song.title.split(". ")[1], slugOptions)}.html`,
+    revision: null,
+  })),
+  ...songs.map((song) => ({
+    url: `_next/data/${buildId}/nomor/${song.number}.json`,
+    revision: null,
+  })),
+  ...songs.map((song) => ({
+    url: `_next/data/${buildId}/judul/${slugify(
+      song.title.split(". ")[1],
+      slugOptions
+    )}.json`,
+    revision: null,
+  })),
 ];
 
 module.exports = withPWA({
@@ -23,6 +38,6 @@ module.exports = withPWA({
   pwa: {
     disable: process.env.NODE_ENV === "development",
     dest: "public",
-    additionalManifestEntries: additionalEntries
+    additionalManifestEntries: additionalEntries,
   },
 });

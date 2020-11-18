@@ -20,6 +20,7 @@ export default class MyDocument extends Document {
             />
           )}
           <meta name="application-name" content="Doding Haleluya Digital" />
+          <meta name="google" content="notranslate" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta
             name="apple-mobile-web-app-status-bar-style"

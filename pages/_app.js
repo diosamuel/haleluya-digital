@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
   useEffect(() => {
     const handleRouteChange = (url) => {
+      window.scrollTo({ top: 0 });
       if (process.env.NODE_ENV === "production") {
         gtag.pageview(url);
       }

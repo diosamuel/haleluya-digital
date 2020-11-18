@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { AwesomeButton } from "react-awesome-button";
+import { Share2 } from "react-feather";
 
 export default function ShareButton({ title = "", lyrics = "" }) {
   const [windowLoaded, setWindowLoaded] = useState(false);
@@ -20,12 +22,17 @@ export default function ShareButton({ title = "", lyrics = "" }) {
   }
   if (windowLoaded && window.navigator.share) {
     return (
-      <button
-        style={{ fontSize: "1.5rem", marginBottom: "1rem" }}
+      <AwesomeButton
+        style={{
+          marginRight: "0.5rem",
+          marginBottom: "1rem",
+          zIndex: 1,
+        }}
         onClick={handleShareClick}
       >
-        Bagihon
-      </button>
+        <Share2 />
+        &nbsp;Bagihon
+      </AwesomeButton>
     );
   } else {
     return null;

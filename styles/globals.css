@@ -1,5 +1,5 @@
 :root {
-  --body-bg: #f5feff;
+  --body-bg: #fafeff;
 }
 
 html,
@@ -13,9 +13,12 @@ body {
 
 a {
   color: inherit;
-  text-decoration: none;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.aws-btn__content {
+  font-size: 1.25rem;
 }

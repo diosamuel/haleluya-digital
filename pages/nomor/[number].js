@@ -32,7 +32,7 @@ export async function getStaticProps(context) {
 const Nomor = ({ song, prevSlug, nextSlug }) => {
   return (
     <Page prevSlug={prevSlug} nextSlug={nextSlug} title={song.title} lyrics={song.lyrics}>
-      <h3>{song.title}</h3>
+      <h3 className={styles.title}>{song.title}</h3>
       <p className={styles.lyrics}>{song.lyrics}</p>
     </Page>
   );
