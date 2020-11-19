@@ -22,3 +22,8 @@ a {
 .aws-btn__content {
   font-size: 1.25rem;
 }
+
+.copying {
+  background-color: lightskyblue;
+  transition: all 0.24s;
+}

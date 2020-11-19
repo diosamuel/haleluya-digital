@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import Select, { createFilter } from "react-select";
 import { ArrowLeft, ArrowRight, Info } from "react-feather";
 import { useSwipeable } from "react-swipeable";
+import { useLockBodyScroll } from "react-use";
 // import Highlighter from "react-highlight-words";
 import ShareButton from "./components/ShareButton";
 import styles from "../styles/Page.module.css";
@@ -33,10 +34,12 @@ export default function Page({
   lyrics = "",
   prevSlug,
   nextSlug,
+  awesomeButtonStyles,
   children = null,
 }) {
   const [selectValue, setSelectValue] = useState(null);
   const [showInfo, setShowInfo] = useState(false);
+  useLockBodyScroll(showInfo);
   const router = useRouter();
   const handlers = useSwipeable({
     onSwipedLeft: () => nextSlug && router.push(`/judul/${nextSlug}`),
@@ -92,15 +95,16 @@ export default function Page({
       <div {...handlers} className={styles.pageContent}>
         {children}
         <div className={styles.contentAction}>
-          <ShareButton title={title} lyrics={lyrics} />
+          <ShareButton title={title} />
           {title !== "" && (
             <AwesomeButton
+              cssModule={awesomeButtonStyles}
               type="primary"
               target="_blank"
               reltype="noreferrer noopener"
               href="https://sociabuzz.com/argasaragih/tribe"
             >
-              Donasi ijon
+              Donasi
             </AwesomeButton>
           )}
         </div>
@@ -155,29 +159,27 @@ export default function Page({
             abang Saragih
           </a>
         </p>
-        <p className={styles.descriptionParagraph}>
-          Horas, bapa pakon inang! 👋🏻 <br />
-          Goranku Arga Saragih.
-          <br />
-          Ahu laho mamboan budaya Simalungun hu kancah nasional, atap
-          internasional homa. Langkah parlobei ni ai ma mambahen sada{" "}
-          <em>web application</em> atap aplikasi berbasis web na mamboihon hita
-          mambasa teks doding Haleluya. <br />
-          <br />
-          Age pe sonai sederhana panorang on, ahu sihol manambahkon fitur-fitur
-          canggih ibagas aplikasi on, misalni:
+        <div className={styles.descriptionParagraph}>
+          <p>
+            Horas, bapa pakon inang! 👋🏻 <br />
+            Goranku Arga Saragih na mambaen aplikasi on.
+            <br />
+            Age pe sederhana bani panorang on, sihol do uhur manambahkon
+            fitur-fitur canggih ibagas aplikasi on, misalni:
+          </p>
           <ul>
-            <li>Not angka, balok</li>
+            <li>Not angka, not balok</li>
             <li>Transpose not</li>
-            <li>
-              Kapabilitas <em>offline</em> na stabil
-            </li>
+            <li>Tanpa mamorluhon internet</li>
             <li>Pakon na legan...</li>
           </ul>
-          Jadi, ahu mangindo bantuan ham marhitei donasi ase lambin semangat ahu
-          mambaen aplikasi on. Diatei tupa bani sagala partisipasi bapa, inang,
-          haganup hasoman na domma mangurupi au. Syalom! 😁
-        </p>
+          <p>
+            Sihol do uhurhu, mamboan budaya Simalungun hu kancah nasional, atap
+            internasional homa. Tapi ibutuhon do banggal ni uhur hita marhitei
+            donasi ibagas pambahenan aplikasi on. Diatei tupa bani bapa, inang,
+            haganup hasoman na domma marpartisipasi. Syalom! 😁
+          </p>
+        </div>
         <AwesomeButton
           className={styles.donationButton}
           type="primary"
@@ -185,7 +187,7 @@ export default function Page({
           reltype="noreferrer noopener"
           href="https://sociabuzz.com/argasaragih/tribe"
         >
-          Donasi ijon
+          Donasi
         </AwesomeButton>
         <button onClick={handleCloseInfo}>Tutup</button>
       </aside>

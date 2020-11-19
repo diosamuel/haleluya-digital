@@ -34,6 +34,7 @@ export default class MyDocument extends Document {
             name="description"
             content="Doding Haleluya Digital Simalungun na bayu. Ikembangkon sada putra Simalungun."
           />
+          <meta name="og:image" content="/treble-logo.png" />
           <meta name="format-detection" content="telephone=no" />
           <meta name="mobile-web-app-capable" content="yes" />
           <meta name="theme-color" content="#FFFFFF" />

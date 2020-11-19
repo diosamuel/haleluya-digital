@@ -1,7 +1,4 @@
-// import { useEffect, useRef } from "react";
 import Page from "./Page";
-import "react-awesome-button/dist/styles.css";
-import "react-awesome-button/dist/themes/theme-blue.css";
 
 export default function Home() {
   // const installPromptRef = useRef(null);

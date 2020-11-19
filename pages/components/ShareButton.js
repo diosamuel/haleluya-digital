@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AwesomeButton } from "react-awesome-button";
 import { Share2 } from "react-feather";
 
-export default function ShareButton({ title = "", lyrics = "" }) {
+export default function ShareButton({ title = "" }) {
   const [windowLoaded, setWindowLoaded] = useState(false);
   useEffect(() => {
     setWindowLoaded(true);
@@ -12,8 +12,8 @@ export default function ShareButton({ title = "", lyrics = "" }) {
       window.navigator.share({
         title: (title ? `${title} | ` : "") + "Doding Haleluya Digital",
         text: title
-          ? `Lirik doding Haleluya No. ${title}`
-          : "Doding Haleluya Digital Simalungun na bayu. Ikembangkon sada putra Simalungun.",
+          ? `Lirik doding Haleluya No. ${title} | Dukung karya anak Simalungun.`
+          : "Horas! Dukung karya anak Simalungun.",
         url: window.location.href,
       });
     } else {
@@ -28,7 +28,7 @@ export default function ShareButton({ title = "", lyrics = "" }) {
           marginBottom: "1rem",
           zIndex: 1,
         }}
-        onClick={handleShareClick}
+        onPress={handleShareClick}
       >
         <Share2 />
         &nbsp;Bagihon

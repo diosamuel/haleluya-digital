@@ -1,6 +1,6 @@
 .title {
   position: sticky;
-  z-index: 0;
+  z-index: 1;
   background: #fafeff;
   margin-bottom: 0;
   padding: 0.5em 0;
@@ -12,4 +12,63 @@
 .lyrics {
   white-space: pre-wrap;
   line-height: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.copyIcon {
+  display: none;
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0;
+  margin-left: 1rem;
+  cursor: pointer;
+  height: 24px;
+}
+
+.verse {
+  position: relative;
+}
+
+.verse span:first-child {
+  transition: all 0.24s;
+}
+
+@media (hover: hover) {
+  .verse:hover .copyIcon {
+    position: absolute;
+    right: -15px;
+    bottom: 0s;
+    display: inline-block;
+  }
+}
+
+.copyIcon:before {
+  content: attr(data-title); /* here's the magic */
+  position: absolute;
+
+  /* vertically center */
+  top: 50%;
+  transform: translateY(-50%);
+
+  /* move to right */
+  left: 100%;
+  margin-left: 10px; /* and add a small left margin */
+
+  /* basic styles */
+  width: min-content;
+  padding: 2px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.05);
+  color: darkslategray;
+  text-align: center;
+  font-size: 10px;
+  height: 20px;
+  line-height: 20px;
+
+  display: none; /* hide by default */
+}
+
+.copyIcon:hover:before {
+  display: block;
 }
