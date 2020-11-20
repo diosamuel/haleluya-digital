@@ -116,6 +116,7 @@ export default function Page({
           </div>
         )}
         <Select
+          aria-label="Kolom pencarian"
           menuPlacement={"top"}
           className={styles.select}
           placeholder="Sari nomor/judul"
@@ -146,6 +147,8 @@ export default function Page({
             className={styles.logoImage}
             src="/treble-logo.png"
             alt="Logo situs"
+            width="128px"
+            height="128px"
           />
         </div>
         <h2>Haleluya Digital</h2>
