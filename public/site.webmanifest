@@ -3,19 +3,54 @@
   "short_name": "Haleluya Digital",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "https://haleluya.digital/android-chrome-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "https://haleluya.digital/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "start_url": "/",
+  "start_url": "https://haleluya.digital/",
   "theme_color": "#fafeff",
   "background_color": "#fafeff",
   "display": "standalone",
-  "orientation": "portrait"
+  "orientation": "portrait",
+  "url": "https://haleluya.digital",
+  "lang": "Indonesian",
+  "screenshots": [
+    {
+      "src": "https://haleluya.digital/home-desktop.png",
+      "sizes": "1280x800",
+      "type": "image/png"
+    },
+    {
+      "src": "https://haleluya.digital/home-mobile.png",
+      "sizes": "750x1334",
+      "type": "image/png"
+    },
+    {
+      "src": "https://haleluya.digital/8-desktop.png",
+      "sizes": "1280x800",
+      "type": "image/png"
+    },
+    {
+      "src": "https://haleluya.digital/8-mobile.png",
+      "sizes": "750x1334",
+      "type": "image/png"
+    },
+    {
+      "src": "https://haleluya.digital/343-desktop.png",
+      "sizes": "1280x800",
+      "type": "image/png"
+    },
+    {
+      "src": "https://haleluya.digital/343-mobile.png",
+      "sizes": "750x1334",
+      "type": "image/png"
+    }
+  ],
+  "description": "Horas, bapa pakon inang! 👋🏻 Goranku Arga Saragih na mambaen aplikasi on. Sihol do uhurhu, mamboan budaya Simalungun hu kancah nasional, atap internasional homa. Tapi ibutuhon do banggal ni uhur hita marhitei donasi ibagas pambahenan aplikasi on. Diatei tupa bani bapa, inang, haganup hasoman na domma marpartisipasi. Syalom! 😁"
 }
