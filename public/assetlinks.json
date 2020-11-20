@@ -1,0 +1,5 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target" : { "namespace": "android_app", "package_name": "digital.haleluya.twa",
+                   "sha256_cert_fingerprints": ["51:BD:FC:23:59:46:49:BE:15:12:71:AE:8B:13:E1:15:E7:15:E0:ED:6A:E2:CA:3D:AD:F5:E9:3A:F4:F8:47:B4"] }
+    }]
