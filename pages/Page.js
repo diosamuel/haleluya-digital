@@ -101,7 +101,7 @@ export default function Page({
               cssModule={awesomeButtonStyles}
               type="primary"
               target="_blank"
-              reltype="noreferrer noopener"
+              rel="noreferrer"
               href="https://sociabuzz.com/argasaragih/tribe"
             >
               Donasi
@@ -151,11 +151,7 @@ export default function Page({
         <h2>Haleluya Digital</h2>
         <p>
           Ikembangkon{" "}
-          <a
-            href="https://argasaragih.com"
-            target="_blank"
-            reltype="noopener noreferrer"
-          >
+          <a href="https://argasaragih.com" target="_blank" rel="noreferrer">
             abang Saragih
           </a>
         </p>
@@ -184,7 +180,7 @@ export default function Page({
           className={styles.donationButton}
           type="primary"
           target="_blank"
-          reltype="noreferrer noopener"
+          rel="noreferrer"
           href="https://sociabuzz.com/argasaragih/tribe"
         >
           Donasi
