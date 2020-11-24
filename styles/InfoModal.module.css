@@ -1,0 +1,102 @@
+.showInfoModal {
+  position: fixed;
+  top: 200%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 90vh;
+  pointer-events: none;
+  border-radius: 4px;
+  background: #fbfbfb;
+  transition: opacity 0.96s, top 1.6s cubic-bezier(0.22, 1, 0.19, 1);
+  opacity: 0;
+  padding: 1rem 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  max-width: 800px;
+  display: grid;
+  grid-template-rows: 25% 75%;
+  grid-template-columns: 25% 75%;
+  z-index: 2;
+}
+
+.showInfoModal.shown {
+  pointer-events: all;
+  opacity: 1;
+  top: 50%;
+  transition: opacity 0.24s, top 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: 2;
+}
+
+.appInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  grid-column: span 2;
+}
+
+.modalText {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logoImage {
+  height: 50%;
+  width: auto;
+  min-height: 64px;
+  min-width: 64px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 50%;
+}
+
+.showInfoModal h2 {
+  margin-bottom: 0;
+}
+
+.descriptionParagraph {
+  text-align: justify;
+  overflow: auto;
+  border-radius: 4px;
+  padding: 0 1em;
+  margin: 1rem 0;
+  box-shadow: 0 1px #ffffff inset, 0 1px 3px rgba(34, 25, 25, 0.4);
+  background-color: white;
+}
+
+.modalActions {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.donationButton {
+  margin-left: 1rem;
+}
+
+.googlePlayButton {
+  max-width: 161px;
+  max-height: 62px;
+  cursor: pointer;
+}
+
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  .modalActions {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .donationButton {
+    margin-bottom: unset;
+  }
+
+  .appInfo {
+    grid-column: span 1;
+  }
+
+  .modalText {
+    grid-column: 2;
+    grid-row: span 2;
+    margin-left: 0.5rem;
+  }
+}

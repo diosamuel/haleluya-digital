@@ -8,6 +8,7 @@ import { useSwipeable } from "react-swipeable";
 import { useLockBodyScroll } from "react-use";
 // import Highlighter from "react-highlight-words";
 import ShareButton from "./components/ShareButton";
+import InfoModal from "./components/InfoModal";
 import styles from "../styles/Page.module.css";
 import { slugTitle } from "../helper";
 
@@ -139,57 +140,7 @@ export default function Page({
         </div>
         <div>Copyright &copy; {new Date().getFullYear()} Haleluya Digital</div>
       </footer>
-      <aside
-        className={styles.showInfoModal + " " + (showInfo ? styles.shown : "")}
-      >
-        <div className={styles.logoContainer}>
-          <img
-            className={styles.logoImage}
-            src="/treble-logo.png"
-            alt="Logo situs"
-            width="128px"
-            height="128px"
-          />
-        </div>
-        <h2>Haleluya Digital</h2>
-        <p>
-          Ikembangkon{" "}
-          <a href="https://argasaragih.com" target="_blank" rel="noreferrer">
-            abang Saragih
-          </a>
-        </p>
-        <div className={styles.descriptionParagraph}>
-          <p>
-            Horas, bapa pakon inang! 👋🏻 <br />
-            Goranku Arga Saragih na mambaen aplikasi on.
-            <br />
-            Age pe sederhana bani panorang on, sihol do uhur manambahkon
-            fitur-fitur canggih ibagas aplikasi on, misalni:
-          </p>
-          <ul>
-            <li>Not angka, not balok</li>
-            <li>Transpose not</li>
-            <li>Tanpa mamorluhon internet</li>
-            <li>Pakon na legan...</li>
-          </ul>
-          <p>
-            Sihol do uhurhu, mamboan budaya Simalungun hu kancah nasional, atap
-            internasional homa. Tapi ibutuhon do banggal ni uhur hita marhitei
-            donasi ibagas pambahenan aplikasi on. Diatei tupa bani bapa, inang,
-            haganup hasoman na domma marpartisipasi. Syalom! 😁
-          </p>
-        </div>
-        <AwesomeButton
-          className={styles.donationButton}
-          type="primary"
-          target="_blank"
-          rel="noreferrer"
-          href="https://sociabuzz.com/argasaragih/tribe"
-        >
-          Donasi
-        </AwesomeButton>
-        <button onClick={handleCloseInfo}>Tutup</button>
-      </aside>
+      <InfoModal open={showInfo} onClose={handleCloseInfo} />
     </div>
   );
 }
