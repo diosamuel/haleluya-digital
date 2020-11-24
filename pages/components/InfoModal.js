@@ -40,7 +40,7 @@ export default function InfoModal(props) {
       <div className={styles.modalText}>
         <img
           className={styles.googlePlayButton}
-          src="google-play-badge.png"
+          src="/google-play-badge.png"
           alt="Google Play badge"
           width="323"
           height="125"
