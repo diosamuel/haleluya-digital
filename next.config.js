@@ -40,4 +40,18 @@ module.exports = withPWA({
     dest: "public",
     additionalManifestEntries: additionalEntries,
   },
+  async redirects() {
+    return [
+      {
+        source: "/:number(\\d{1,})",
+        destination: "/nomor/:number",
+        permanent: true,
+      },
+      {
+        source: "/:judul([a-z\\-]{1,})",
+        destination: "/judul/:judul",
+        permanent: true,
+      },
+    ];
+  },
 });
