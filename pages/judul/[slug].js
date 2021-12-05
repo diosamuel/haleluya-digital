@@ -3,6 +3,7 @@ import { Copy } from "react-feather";
 import Page from "../Page";
 import { slugTitle } from "../../helper";
 import songs from "../../songs.json";
+import parts from "../../parts.json";
 import styles from "../../styles/PageContent.module.css";
 import { useWindowScroll } from "react-use";
 
@@ -15,6 +16,9 @@ export async function getStaticProps(context) {
   const { slug } = context.params;
   let song = songs.find((song) => slugTitle(song.title) === slug);
   let songIndex = songs.findIndex((song) => slugTitle(song.title) === slug);
+  let songPart = parts.find(
+    (part) => part.numbers.indexOf(song.number) > -1
+  ).doding;
   let prevSlug = "";
   let nextSlug = "";
   if (songIndex > 0) {
@@ -28,11 +32,12 @@ export async function getStaticProps(context) {
       prevSlug,
       nextSlug,
       song,
+      songPart,
     },
   };
 }
 
-const Judul = ({ song, prevSlug, nextSlug }) => {
+const Judul = ({ song, songPart, prevSlug, nextSlug }) => {
   const shrunk = useRef(false);
   const { y } = useWindowScroll();
   if (y > 130 && !shrunk.current) {
@@ -72,7 +77,9 @@ const Judul = ({ song, prevSlug, nextSlug }) => {
         style={{ fontSize: shrunk.current ? "20px" : "revert" }}
       >
         {song.title}
+        <br />
       </h3>
+      <small className={styles.songPart}>Doding {songPart}</small>
       <p key={`lyrics`} className={styles.lyrics}>
         {song.lyrics.split("\n\n").map((part) => {
           return (
@@ -92,6 +99,11 @@ const Judul = ({ song, prevSlug, nextSlug }) => {
             </>
           );
         })}
+        {song.credit && (
+          <small>
+            <em>{song.credit}</em>
+          </small>
+        )}
       </p>
     </Page>
   );
