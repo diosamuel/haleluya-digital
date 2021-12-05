@@ -32,7 +32,7 @@ export default function InfoModal(props) {
               rel="noreferrer"
               style={{ whiteSpace: "nowrap" }}
             >
-              abang Saragih
+              Arga Saragih
             </a>
           </small>
         </p>
@@ -49,7 +49,8 @@ export default function InfoModal(props) {
         <div className={styles.descriptionParagraph}>
           <p>
             Horas, bapa pakon inang! 👋🏻 <br />
-            Goranku Arga Saragih na mambaen aplikasi on.
+            Goranku Arga Saragih na mambaen aplikasi on. Adong pe, bang Abner
+            Saragih na mambaen video YouTube doding na adong ijon.
             <br />
             Age pe sederhana bani panorang on, sihol do uhur manambahkon
             fitur-fitur canggih ibagas aplikasi on, misalni:
@@ -57,7 +58,9 @@ export default function InfoModal(props) {
           <ul>
             <li>Not angka, not balok</li>
             <li>Transpose not</li>
-            <li>Tanpa mamorluhon internet</li>
+            <li>
+              Boi iidah <em>offline</em>
+            </li>
             <li>Pakon na legan...</li>
           </ul>
           <p>
@@ -66,6 +69,12 @@ export default function InfoModal(props) {
             donasi ibagas pambahenan aplikasi on. Diatei tupa bani bapa, inang,
             haganup hasoman na domma marpartisipasi. Syalom! 😁
           </p>
+          <h3>Update:</h3>
+          <h4>v1.1.0</h4>
+          <ul>
+            <li>Tambahkon bagianni doding</li>
+            <li>Tambahkon video ni doding (Hal 1 &amp; 2)</li>
+          </ul>
         </div>
         <div className={styles.modalActions}>
           <AwesomeButton type="secondary" onPress={onClose}>
