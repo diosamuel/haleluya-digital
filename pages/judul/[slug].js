@@ -6,6 +6,7 @@ import songs from "../../songs.json";
 import parts from "../../parts.json";
 import styles from "../../styles/PageContent.module.css";
 import { useWindowScroll } from "react-use";
+import ReactYouTube from "react-youtube";
 
 export async function getStaticPaths() {
   const paths = songs.map((song) => `/judul/${slugTitle(song.title)}`);
@@ -80,6 +81,14 @@ const Judul = ({ song, songPart, prevSlug, nextSlug }) => {
         <br />
       </h3>
       <small className={styles.songPart}>Doding {songPart}</small>
+      {song.youtubeId && (
+        <ReactYouTube
+          videoId={song.youtubeId}
+          opts={{
+            width: "100%",
+          }}
+        />
+      )}
       <p key={`lyrics`} className={styles.lyrics}>
         {song.lyrics.split("\n\n").map((part) => {
           return (
