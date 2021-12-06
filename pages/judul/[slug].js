@@ -67,12 +67,13 @@ const Judul = ({ song, prevSlug, nextSlug }) => {
       lyrics={song.lyrics}
     >
       <h3
+        key={`title`}
         className={styles.title}
         style={{ fontSize: shrunk.current ? "20px" : "revert" }}
       >
         {song.title}
       </h3>
-      <p className={styles.lyrics}>
+      <p key={`lyrics`} className={styles.lyrics}>
         {song.lyrics.split("\n\n").map((part) => {
           return (
             <>
