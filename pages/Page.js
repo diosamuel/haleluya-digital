@@ -120,7 +120,7 @@ export default function Page({
           aria-label="Kolom pencarian"
           menuPlacement={"top"}
           className={styles.select}
-          placeholder="Sari nomor/judul"
+          placeholder="Cari nomor/judul"
           options={options}
           filterOption={createFilter({ ignoreAccents: false })}
           // formatOptionLabel={formatOptionLabel}

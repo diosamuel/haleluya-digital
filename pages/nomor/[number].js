@@ -3,6 +3,7 @@ import { Copy } from "react-feather";
 import Page from "../Page";
 import { slugTitle } from "../../helper";
 import songs from "../../songs.json";
+import parts from "../../parts.json";
 import styles from "../../styles/PageContent.module.css";
 import { useWindowScroll } from "react-use";
 
@@ -15,6 +16,9 @@ export async function getStaticProps(context) {
   const { number } = context.params;
   let song = songs.find((song) => song.number === Number(number));
   let songIndex = songs.findIndex((song) => song.number === Number(number));
+  let songPart = parts.find(
+    (part) => part.numbers.indexOf(song.number) > -1
+  ).doding;
   let prevSlug = "";
   let nextSlug = "";
   if (songIndex > 0) {
@@ -28,11 +32,12 @@ export async function getStaticProps(context) {
       prevSlug,
       nextSlug,
       song,
+      songPart,
     },
   };
 }
 
-const Nomor = ({ song, prevSlug, nextSlug }) => {
+const Nomor = ({ song, songPart, prevSlug, nextSlug }) => {
   const shrunk = useRef(false);
   const { y } = useWindowScroll();
   if (y > 130 && !shrunk.current) {
@@ -72,6 +77,7 @@ const Nomor = ({ song, prevSlug, nextSlug }) => {
       >
         {song.title}
       </h3>
+      <small className={styles.songPart}>Doding {songPart}</small>
       <p className={styles.lyrics}>
         {song.lyrics.split("\n\n").map((part) => {
           return (
