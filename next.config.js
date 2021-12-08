@@ -30,8 +30,7 @@ const additionalEntries = [
 ];
 
 module.exports = withPWA({
-  // Target must be serverless
-  target: "serverless",
+  swcMinify: true,
   generateBuildId: () => {
     return String(buildId);
   },
