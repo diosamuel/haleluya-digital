@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import { Copy } from "react-feather";
 import Page from "../Page";
 import { slugTitle } from "../../helper";
 import songs from "../../songs.json";
@@ -7,6 +6,7 @@ import parts from "../../parts.json";
 import styles from "../../styles/PageContent.module.css";
 import { useWindowScroll } from "react-use";
 import ReactYouTube from "react-youtube";
+import Verse from "../components/Verse";
 
 export async function getStaticPaths() {
   const paths = songs.map((song) => `/nomor/${song.number}`);
@@ -89,22 +89,7 @@ const Nomor = ({ song, songPart, prevSlug, nextSlug }) => {
       )}
       <p className={styles.lyrics}>
         {song.lyrics.split("\n\n").map((part) => {
-          return (
-            <>
-              <span className={styles.verse}>
-                <span>{part}</span>
-                <span
-                  data-title="Copy"
-                  onClick={handleCopyClick}
-                  className={styles.copyIcon}
-                >
-                  <Copy style={{ zIndex: 0 }} />
-                </span>
-              </span>
-
-              <br />
-            </>
-          );
+          return <Verse key={index} text={part} />;
         })}
       </p>
     </Page>
