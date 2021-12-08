@@ -47,24 +47,7 @@ const Nomor = ({ song, songPart, prevSlug, nextSlug }) => {
   if (shrunk.current && y < 80) {
     shrunk.current = false;
   }
-  function handleCopyClick(e) {
-    var verseElement =
-      e.target.parentElement.previousElementSibling ||
-      e.target.parentElement.parentElement.previousElementSibling;
-    var verseText = verseElement.innerText;
-    verseElement.classList.add("copying");
-    e.target.parentElement.setAttribute("data-title", "Copied");
-    setTimeout(function () {
-      e.target.parentElement.setAttribute("data-title", "Copy");
-      verseElement.classList.remove("copying");
-    }, 500);
-    navigator.clipboard
-      .writeText(verseText)
-      .then(() => {})
-      .catch((err) => {
-        console.log("Something went wrong", err);
-      });
-  }
+
   return (
     <Page
       prevSlug={prevSlug}
@@ -88,7 +71,7 @@ const Nomor = ({ song, songPart, prevSlug, nextSlug }) => {
         />
       )}
       <p className={styles.lyrics}>
-        {song.lyrics.split("\n\n").map((part) => {
+        {song.lyrics.split("\n\n").map((part, index) => {
           return <Verse key={index} text={part} />;
         })}
       </p>
