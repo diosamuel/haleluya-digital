@@ -12,10 +12,10 @@ const additionalEntries = [
   //   url: `/nomor/${song.number}.html`,
   //   revision: null,
   // })),
-  ...songs.map((song) => ({
-    url: `/judul/${slugify(song.title.split(". ")[1], slugOptions)}.html`,
-    revision: null,
-  })),
+  // ...songs.map((song) => ({
+  //   url: `/judul/${slugify(song.title.split(". ")[1], slugOptions)}.html`,
+  //   revision: null,
+  // })),
   // ...songs.map((song) => ({
   //   url: `_next/data/${buildId}/nomor/${song.number}.json`,
   //   revision: null,
