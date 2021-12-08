@@ -37,7 +37,6 @@ module.exports = withPWA({
   pwa: {
     disable: process.env.NODE_ENV === "development",
     dest: "public",
-    additionalManifestEntries: additionalEntries,
   },
   async redirects() {
     return [
