@@ -1,12 +1,12 @@
 import { useRef } from "react";
 import Page from "../Page";
-import { slugTitle } from "../../helper";
-import songs from "../../songs.json";
-import parts from "../../parts.json";
-import styles from "../../styles/PageContent.module.css";
+import { slugTitle } from "helper";
+import songs from "songs.json";
+import parts from "parts.json";
+import styles from "styles/PageContent.module.css";
 import { useWindowScroll } from "react-use";
 import ReactYouTube from "react-youtube";
-import Verse from "../../components/Verse";
+import Verse from "components/Verse";
 
 export async function getStaticPaths() {
   const paths = songs.map((song) => `/nomor/${song.number}`);

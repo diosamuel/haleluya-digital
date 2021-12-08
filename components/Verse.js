@@ -1,5 +1,5 @@
 import { Copy } from "react-feather";
-import styles from "../styles/Verse.module.css";
+import styles from "styles/Verse.module.css";
 export default function Verse(props) {
   const { text } = props;
 

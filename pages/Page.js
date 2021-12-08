@@ -6,13 +6,12 @@ import Select, { createFilter } from "react-select";
 import { ArrowLeft, ArrowRight, Info } from "react-feather";
 import { useSwipeable } from "react-swipeable";
 import { useLockBodyScroll } from "react-use";
-// import Highlighter from "react-highlight-words";
-import ShareButton from "../components/ShareButton";
-import InfoModal from "../components/InfoModal";
-import styles from "../styles/Page.module.css";
-import { slugTitle } from "../helper";
+import ShareButton from "components/ShareButton";
+import InfoModal from "components/InfoModal";
+import styles from "styles/Page.module.css";
+import { slugTitle } from "helper";
 
-import songs from "../songs.json";
+import songs from "songs.json";
 import { AwesomeButton } from "react-awesome-button";
 
 const options = songs.map((song) => ({
@@ -20,19 +19,8 @@ const options = songs.map((song) => ({
   label: song.title,
 }));
 
-// function formatOptionLabel({ label }, { inputValue }) {
-//   return (
-//     <Highlighter
-//       highlightStyle={{ backgroundColor: "unset", fontWeight: 700 }}
-//       searchWords={[inputValue]}
-//       textToHighlight={label}
-//     />
-//   );
-// }
-
 export default function Page({
   title = "",
-  lyrics = "",
   prevSlug,
   nextSlug,
   awesomeButtonStyles,
@@ -70,8 +58,7 @@ export default function Page({
   if (children === null) {
     children = (
       <p className={styles.contentPlaceholder}>
-        Ketik judul atap nomor doding i kotak pansarian ase taridah lirikni
-        doding ai
+        Ketik judul atap nomor doding bani kotak pencarian
       </p>
     );
   }

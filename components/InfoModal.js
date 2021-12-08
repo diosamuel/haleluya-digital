@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { AwesomeButton } from "react-awesome-button";
-import styles from "../styles/InfoModal.module.css";
-import trebleLogo from "../public/treble-logo.png";
-import googlePlayBadge from "../public/google-play-badge.png";
-import { APP_VERSION } from "../constants";
+import styles from "/styles/InfoModal.module.css";
+import trebleLogo from "/public/treble-logo.png";
+import googlePlayBadge from "/public/google-play-badge.png";
+import { APP_VERSION } from "/constants";
 
 export default function InfoModal(props) {
   const { open, onClose } = props;
