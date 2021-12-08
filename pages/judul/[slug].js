@@ -6,7 +6,7 @@ import parts from "../../parts.json";
 import styles from "../../styles/PageContent.module.css";
 import { useWindowScroll } from "react-use";
 import ReactYouTube from "react-youtube";
-import Verse from "../components/Verse";
+import Verse from "../../components/Verse";
 
 export async function getStaticPaths() {
   const paths = songs.map((song) => `/judul/${slugTitle(song.title)}`);

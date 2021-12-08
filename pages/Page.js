@@ -7,8 +7,8 @@ import { ArrowLeft, ArrowRight, Info } from "react-feather";
 import { useSwipeable } from "react-swipeable";
 import { useLockBodyScroll } from "react-use";
 // import Highlighter from "react-highlight-words";
-import ShareButton from "./components/ShareButton";
-import InfoModal from "./components/InfoModal";
+import ShareButton from "../components/ShareButton";
+import InfoModal from "../components/InfoModal";
 import styles from "../styles/Page.module.css";
 import { slugTitle } from "../helper";
 
