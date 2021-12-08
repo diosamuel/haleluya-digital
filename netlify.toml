@@ -4,5 +4,5 @@
   publish   = ".next"
   environment = { NODE_VERSION = "14" }
 
-[functions]
-  included_files = [".next/*.json"]
+[[plugins]]
+package = "@netlify/plugin-nextjs"
