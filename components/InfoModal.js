@@ -73,6 +73,13 @@ export default function InfoModal(props) {
             haganup hasoman na domma marpartisipasi. Syalom! 😁
           </p>
           <h3>Update:</h3>
+          <h4>v1.1.4</h4>
+          <ul>
+            <li>
+              Tambahkon video: 23, 26-31, 39, 41, 42, 45, 48, 53, 54, 56, 59,
+              61, 62, 64, 65
+            </li>
+          </ul>
           <h4>v1.1.3</h4>
           <ul>
             <li>Tambahkon video: 21, 22</li>
